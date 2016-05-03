@@ -1,5 +1,5 @@
 #
-# The project uses Stu instead of Make.  Get Stu at
+# This project uses Stu instead of Make.  Get Stu at
 # 
 # https://github.com/kunegis/stu
 #
@@ -34,6 +34,3 @@ polcovar.pdf:
 	pdflatex -file-line-error -halt-on-error polcovar.tex
 	pdflatex -file-line-error -halt-on-error polcovar.tex
 }
-
-ref.bib = ../../bibtex/ref.bib;
-

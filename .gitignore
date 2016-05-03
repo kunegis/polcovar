@@ -1,0 +1,8 @@
+SOURCES
+SOURCES-prefix
+*.aux
+*.bbl
+*.blg
+*.log
+*.pdf
+*.tar.bz2

@@ -1,0 +1,39 @@
+#
+# The project uses Stu instead of Make.  Get Stu at
+# 
+# https://github.com/kunegis/stu
+#
+
+% version 1.13
+
+polcovar.tar.bz2:  [SOURCES] SOURCES-prefix
+{
+	cd .. 
+	tar cfvvj polcovar/polcovar.tar.bz2 $(cat polcovar/SOURCES-prefix)
+}
+
+>SOURCES:  . 
+{
+	echo *.m
+	echo polcovar.pdf README
+}
+
+>SOURCES-prefix:  <SOURCES
+{
+	sed -e 's,[[:space:]],\
+,g' | sed -e '/^$/d;s,^,polcovar/,' 
+}
+
+polcovar.pdf:  
+	polcovar.tex 
+	polcovar.bib
+{
+	rm -f *.aux *.log *.out *.bbl *.blg
+	pdflatex -file-line-error -halt-on-error polcovar.tex
+	bibtex polcovar
+	pdflatex -file-line-error -halt-on-error polcovar.tex
+	pdflatex -file-line-error -halt-on-error polcovar.tex
+}
+
+ref.bib = ../../bibtex/ref.bib;
+

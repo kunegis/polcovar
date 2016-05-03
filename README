@@ -1,0 +1,13 @@
+This is the Polcovar software for computing the mean and variance of
+subgraph counts in random graphs.
+
+See polcovar.pdf for the full documentation.
+
+The two main entry points are polcovar_mu.m and polcovar_sigma.m.
+
+See polcovar_example.m for an example. 
+
+This project uses Stu instead of Make.  Get Stu at
+
+https://github.com/kunegis/stu
+

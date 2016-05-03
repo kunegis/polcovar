@@ -1,7 +1,17 @@
-This is the Polcovar software for computing the mean and variance of
-subgraph counts in random graphs.
+Polcovar
+========
 
-See polcovar.pdf for the full documentation.
+This is the Polcovar software for computing the mean and variance of
+subgraph counts in random graphs.  Read the article on arXiv:
+
+https://arxiv.org/abs/1402.5835
+
+This source code also includes the source of that article. 
+
+How to use it 
+-------------
+
+Polcovar is written in Matlab. 
 
 The two main entry points are polcovar_mu.m and polcovar_sigma.m.
 

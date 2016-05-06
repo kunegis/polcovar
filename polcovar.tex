@@ -2,11 +2,12 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
+\usepackage{hyperref}
 
 \title{ 
   Polcovar:  
   Software for Computing the Mean and Variance of Subgraph Counts
-  in Random Graphs
+  in Random Graphs\footnote{The software is available at \url{https://github.com/kunegis/polcovar/}}
 }  
 
 \begin{document}
@@ -20,7 +21,7 @@ in an Erdős--Rényi random graph over $n$ nodes are rational polynomials
 in $n$ \cite{gp6}.   
 We present a piece of software named Polcovar (from \emph{polynomial}
 and \emph{covariance}) that computes the exact rational coefficients of
-these polynomials in function of $H$.  
+these polynomials in function of the graph $H$.  
 \end{abstract}
 
 \section{Introduction}
@@ -28,13 +29,13 @@ Large networks can be characterised by the number of times specific
 subgraphs appear in them.  For instance, the number of triangles
 measures the clustering in a network and the number of wedges
 (i.e.\ 2-stars / 2-paths) characterises the inequality of the degree
-distribution.  Even the number of vertices and edges in a graph can be
+distribution.  The number of vertices and edges in a graph, too, can be
 characterised in this way as the number of times the complete graphs on
 one and two nodes appear as subgraphs.  To assess whether a graph
 contains many or few subgraphs for its size, the subgraph count must be
 compared to the expected subgraph count in random graphs.  To do this,
 we must know the distribution of subgraph counts.  Under mild conditions
-which are valid for all examples given above, the subgraph count becomes
+which are valid for all examples given below, the subgraph count becomes
 normal in the large graph limit.  Consequently, the distribution of
 subgraph counts is characterised by its mean and average.  Expressions
 for the mean and variance of subgraph counts are given in \cite{gp6},
@@ -50,7 +51,7 @@ Erdős--Rényi model with parameter $p$, i.e., each edge in $G$ exists with
 probability $p$ \cite{b569}. Let $H=(W,F)$ be a pattern, i.e. a small graph with
 $k=|W|$ vertices and $l=|F|$ edges, and $c_H$ the number of times this pattern
 appears as a subgraph of $G$.  
-The mean of variance of $c_H$ are then given by the following
+The mean and variance of $c_H$ are then given by the following
 expressions~\cite{gp6}:
 \begin{align*}
   \mathrm{E}[c_H] &= \frac{n^{\underline{k}}}{|\mathrm{Aut}(H)|} p^{-l} \\
@@ -88,13 +89,13 @@ permuted by $Q$ which share $i$ nodes.
 \section{Special Cases}
 For specific small graphs $H$, we get the following exact results. 
 
-\subsection{Node Count}
+\paragraph{Node Count}
 Taking $H$ as the graph with one node gives the number of
 nodes. Plugging this graph into the general form expression gives
 $\mathrm{E}[c_H]=n$ and $\mathrm{Var}[c_H] = 0$.  In other words, the
 number of nodes is always exactly $n$, as expected. 
 
-\subsection{Edge Count}
+\paragraph{Edge Count}
 Edges are always independent of each other and therefore the binomial
 approximation for the number of edges $m = c_H$ is exact.
 \begin{align*}
@@ -104,7 +105,7 @@ approximation for the number of edges $m = c_H$ is exact.
 These expressions can be derived both by the general form we gave above,
 and by the fact that the number of edges is a binomial distribution. 
 
-\subsection{Triangle Count}
+\paragraph{Triangle Count}
 In a random $n$-graph with parameter $p=1/2$, the number of triangles $t$
 has mean and variance given by
 \begin{align*}
@@ -115,7 +116,7 @@ has mean and variance given by
 
 The expressions follow from the general form given below. 
 
-\subsection{Wedge Count}
+\paragraph{Wedge Count}
 The number $s$ of wegdes (i.e., pairs of edges sharing one endpoint,
 also known as 2-stars or 2-paths) has
 the following distributions when $p=1/2$:
@@ -128,7 +129,7 @@ the following distributions when $p=1/2$:
 
 The expressions follow from the general form given below. 
 
-\subsection{Other Patterns}
+\paragraph{Other Patterns}
 For the number $q$ of squares we get:
 \begin{align*}
   \mathrm{E}[q] &= \frac{1}{128}n^4 -\frac{3}{64}n^3

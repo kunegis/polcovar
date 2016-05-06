@@ -6,3 +6,4 @@ SOURCES-prefix
 *.log
 *.pdf
 *.tar.bz2
+*.out
